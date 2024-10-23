@@ -23,6 +23,7 @@ function Videoinfo() {
         speculation. Join us on a journey that navigates the intricate interplay
         between innovation, ethics, and the ever-evolving tech frontier.",
       </p>
+      <p className="video-info__counter">3 comments</p>
     </div>
   );
 }

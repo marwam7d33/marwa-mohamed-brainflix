@@ -1,0 +1,118 @@
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/variables" as *;
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  line-height: 25px;
+  padding: 0 1rem;
+
+  @include tablet {
+    padding: 0 7rem;
+  }
+  &__container {
+    // margin: 0 1rem;
+    padding-bottom: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__avatar {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 1rem;
+    @include tablet {
+      flex-wrap: wrap;
+    }
+    @include desktop {
+      padding-bottom: 2rem;
+      border-bottom: solid $Silver 2px;
+    }
+  }
+
+  &__input-container {
+    color: #afafaf;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-bottom: 20px;
+  }
+  &__input {
+    height: 8rem;
+    font-family: "avenir";
+    color: black;
+    width: 11rem;
+    border-radius: 4px;
+    padding: 12px;
+  }
+  //   &__name {
+  //     // padding-bottom: 10px;
+  //   }
+
+  &__button {
+    color: $White;
+    font-weight: 600;
+    background-color: $BrainFlix-Black;
+    border-radius: 4px;
+    width: 100%;
+    height: 2.5rem;
+    @include tablet {
+      width: 30%;
+    }
+    &-outer {
+      @include tablet {
+        display: flex;
+        align-content: flex-end;
+        justify-content: flex-end;
+      }
+    }
+    &:hover {
+      background-color: black;
+      color: $White;
+    }
+  }
+  &__fieldset {
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    // padding-bottom: 1.25rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: center;
+      border-bottom: solid $Silver 2px;
+    }
+    @include desktop {
+      padding: 1rem 14rem;
+      border-bottom: #afafaf;
+    }
+  }
+  &__header {
+    font-size: 1.5625rem;
+    font-weight: 600;
+
+    @include tablet {
+      padding: 1rem;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    @include desktop {
+      padding: 0 7rem;
+      font-size: 2.5625rem;
+      font-weight: 600;
+    }
+  }
+  &__button--outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
