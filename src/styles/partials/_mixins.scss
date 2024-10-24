@@ -1,0 +1,106 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+// Mobile text styles
+@mixin mobile-only-header {
+  @media (min-width: 767px) {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    @content;
+  }
+}
+@mixin mobile-section-header {
+  @media (min-width: 767px) {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    @content;
+  }
+}
+
+@mixin mobile-subheader {
+  @media (min-width: 767px) {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    @content;
+  }
+}
+@mixin mobile-body {
+  @media (min-width: 767px) {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    @content;
+  }
+}
+
+@mixin mobile-footer {
+  @media (min-width: 767px) {
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+    @content;
+  }
+}
+// text styles
+@mixin section-header {
+  font-size: 31px;
+  line-height: 0px;
+  font-weight: 600;
+  @content;
+}
+
+// DESKTOP & TABLET TEXT STYLES MOBILE TEXT STYLES
+@mixin main-header {
+  font-size: 60px;
+  line-height: 68px;
+  font-weight: 700;
+}
+
+// Section Header
+@mixin main-section-header {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+// Subheader
+
+@mixin main-subheader {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+// Body Copy
+@mixin main-body {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+// Footer Copy
+@mixin main-footer {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+// Text size: 12px | Line height: 20px | Text weight: Bold 700
+@mixin main-button {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}

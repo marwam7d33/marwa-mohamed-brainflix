@@ -6,7 +6,7 @@ function VideoRecomm({ videos }) {
       {videos.map((video) => (
         <div key={video.id}>
           <h3>{video.title}</h3>
-          <video src={video.url} controls></video>
+          <img src={video.image} alt={video.title}></img>
         </div>
       ))}
     </section>
