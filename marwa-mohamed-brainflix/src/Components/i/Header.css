@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir";
+  margin: 0;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.header__logo {
+  width: 9.6875rem;
+}
+.header__upload {
+  width: 100%;
+  background-color: #0081ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 400;
+  border: white;
+  margin: 0.5625rem;
+}
+.header__search {
+  height: 3rem;
+  width: 14rem;
+  padding: 0.625rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.header__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.header__container {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=Header.css.map */

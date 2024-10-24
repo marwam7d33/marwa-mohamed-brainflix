@@ -7,12 +7,26 @@ function Videoinfo() {
       </h1>
       <div className="video-info__details">
         <span className="video-info__firstdetails">
-          <p className="video-info__text">By Aiden Thompson</p>
-          <p className="video-info__views">980,544 views</p>
+          <p className="video-info__text"> By Aiden Thompson</p>
+          <p className="video-info__views">
+            <img
+              src="\src\assets\Icons\views.svg"
+              alt=""
+              className="video-info__views--icon"
+            />
+            980,544
+          </p>
         </span>
         <span className="video-info__seconddetails">
           <p className="video-info__date"> 8/8/2023</p>
-          <p className="video-info__like">22,479 likes</p>
+          <p className="video-info__like">
+            <img
+              src="\src\assets\Icons\likes.svg"
+              alt=""
+              className="video-info__like--icon"
+            />
+            22,479
+          </p>
         </span>
       </div>
       <p className="video-info__description">

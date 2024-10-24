@@ -11,7 +11,7 @@
     padding: 0 7rem;
   }
   &__container {
-    // margin: 0 1rem;
+    border-bottom: solid $Mercury 2px;
     padding-bottom: 0.9375rem;
     display: flex;
     flex-direction: column;
@@ -37,6 +37,7 @@
   }
 
   &__input-container {
+    width: 100%;
     color: #afafaf;
     display: flex;
     flex-direction: column;
@@ -48,7 +49,7 @@
     height: 8rem;
     font-family: "avenir";
     color: black;
-    width: 11rem;
+    width: 100%;
     border-radius: 4px;
     padding: 12px;
   }
@@ -61,7 +62,7 @@
     font-weight: 600;
     background-color: $BrainFlix-Black;
     border-radius: 4px;
-    width: 100%;
+    width: 75%;
     height: 2.5rem;
     @include tablet {
       width: 30%;
@@ -96,9 +97,10 @@
     }
   }
   &__header {
-    font-size: 1.5625rem;
+    padding-left: 83px;
+    font-size: 13px;
     font-weight: 600;
-
+    color: #afafaf;
     @include tablet {
       padding: 1rem;
       font-size: 2rem;

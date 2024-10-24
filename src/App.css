@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Avenir";
+  src: url(/assets/Font/AvenirNextLTPro-Bold.otf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(/assets/Font/AvenirNextLTPro-Demi.otf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(/assets/Font/AvenirNextLTPro-Regular.otf);
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Avenir";
+  font-weight: 400;
+  font-size: 0.8125rem;
+  color: #323232;
+  margin: 0;
+}/*# sourceMappingURL=App.css.map */
