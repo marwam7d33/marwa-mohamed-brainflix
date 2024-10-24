@@ -1,18 +1,16 @@
 import "./Comments.scss";
 
-function Comments() {
+function Comments({ comments }) {
   return (
     <div>
-      <div className="comments__section">
-        {comments.map((comment) => (
-          <div key={comment.id} className="comment">
-            <p>
-              <strong>{comment.name}</strong> ({comment.timestamp}):
-            </p>
-            <p>{data.comment}</p>
-          </div>
-        ))}
-      </div>
+      <h2>Comments</h2>
+      {comments.map((comment) => (
+        <div key={comment.id}>
+          <p>
+            <strong>{comment.author}:</strong> {comment.text}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }
