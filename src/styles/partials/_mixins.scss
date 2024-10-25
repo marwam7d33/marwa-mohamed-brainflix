@@ -125,3 +125,11 @@
   color: $White;
   background-color: $BrainFlix-Blue;
 }
+
+@mixin cta-main {
+  height: 40px;
+  border-radius: 4px;
+  width: 150px;
+  color: $White;
+  background-color: $BrainFlix-Blue;
+}

@@ -10,6 +10,7 @@ function Header() {
         />
         <div className="header__container">
           <input type="text" placeholder="Search" className="header__search" />
+          <div className="header__tablet--container"></div>
           <img
             src=".\src\assets\Images\Mohan-muruge.jpg"
             alt="Profile"
