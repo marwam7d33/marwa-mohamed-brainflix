@@ -60,10 +60,12 @@
   &__button {
     color: $White;
     font-weight: 600;
-    background-color: $BrainFlix-Black;
+    background-color: $BrainFlix-Blue;
     border-radius: 4px;
     width: 100%;
     height: 2.5rem;
+    border-color: $Silver;
+    border: none;
     @include tablet {
       width: 30%;
     }
@@ -74,7 +76,7 @@
       justify-content: flex-end;
     }
     &:hover {
-      background-color: black;
+      background-color: $BrainFlix-DarkBlue;
       color: $White;
     }
   }

@@ -4,8 +4,7 @@ export default function Forms() {
   return (
     <section className="forms__container">
       <h2 className="forms__header">Join the Conversation</h2>
-      <form className="forms">
-        {/* <div class="forms__fieldset"> */}
+      <form className="forms" onSubmit={(event) => event.preventDefault()}>
         <div className="forms__fieldset">
           <img
             src="\src\assets\Images\Mohan-muruge.jpg"

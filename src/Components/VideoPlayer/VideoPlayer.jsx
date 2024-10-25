@@ -1,9 +1,9 @@
 import "./VideoPlayer.scss";
-function VideoPlayer() {
+function VideoPlayer({ video }) {
   return (
     <div className="video-player">
       <video
-        src="https://unit-3-project-api-0a5620414506.herokuapp.com/stream"
+        src={video.videoUrl}
         controls
         className="video-player__content"
       ></video>

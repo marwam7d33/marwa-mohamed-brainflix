@@ -1,15 +1,20 @@
-@use "../styles/partials/variables" as *;
+@use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
 
 .video-info {
   display: flex;
   flex-direction: column;
   font-family: "avenir";
   &__title {
+    @include mobile-only-header;
     display: flex;
     border-bottom: solid $Mercury 2px;
     padding-bottom: 2rem;
     flex-direction: row;
     justify-content: center;
+    @include tablet {
+      @include main-header;
+    }
   }
   &__details {
     border-bottom: solid $Mercury 2px;

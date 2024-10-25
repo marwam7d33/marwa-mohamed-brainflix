@@ -1,4 +1,7 @@
 @use "./styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/global" as *;
+
 * {
   box-sizing: border-box;
 }

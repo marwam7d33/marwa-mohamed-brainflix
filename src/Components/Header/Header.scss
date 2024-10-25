@@ -1,14 +1,6 @@
 @use "/src/styles/partials/variables" as *;
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Avenir";
-  margin: 0;
-  padding: 10px;
-}
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/global" as *;
 
 .header {
   display: flex;
@@ -21,6 +13,7 @@ body {
     width: 9.6875rem;
   }
   &__upload {
+    @include mobile-labelButton;
     width: 100%;
     background-color: $BrainFlix-Blue;
     color: $White;
@@ -29,6 +22,9 @@ body {
     font-weight: 400;
     border: white;
     margin-bottom: 1.5625rem;
+    @include tablet {
+      @include main-button;
+    }
     &--text {
       width: 100%;
       display: flex;
