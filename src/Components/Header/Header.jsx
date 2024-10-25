@@ -21,7 +21,7 @@ function Header() {
           <button className="header__upload">
             <p className="header__text">
               <img src="\src\assets\Icons\upload.svg"></img>
-              <p className="header__upload--text">UPLOAD</p>
+              <div className="header__upload--text">UPLOAD</div>
             </p>
           </button>
         </div>

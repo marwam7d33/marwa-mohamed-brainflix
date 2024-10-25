@@ -5,6 +5,7 @@ function VideoPlayer({ video }) {
       <video
         src={video.videoUrl}
         controls
+        poster={video.image}
         className="video-player__content"
       ></video>
     </div>
