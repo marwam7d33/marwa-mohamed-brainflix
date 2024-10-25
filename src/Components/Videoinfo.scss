@@ -5,8 +5,11 @@
   flex-direction: column;
   font-family: "avenir";
   &__title {
+    display: flex;
     border-bottom: solid $Mercury 2px;
     padding-bottom: 2rem;
+    flex-direction: row;
+    justify-content: center;
   }
   &__details {
     border-bottom: solid $Mercury 2px;

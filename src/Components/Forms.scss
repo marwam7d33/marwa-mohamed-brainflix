@@ -62,12 +62,13 @@
     font-weight: 600;
     background-color: $BrainFlix-Black;
     border-radius: 4px;
-    width: 75%;
+    width: 100%;
     height: 2.5rem;
     @include tablet {
       width: 30%;
     }
     &-outer {
+      padding-left: 4rem;
       display: flex;
       align-content: flex-end;
       justify-content: flex-end;
@@ -96,7 +97,7 @@
   }
   &__header {
     padding-left: 83px;
-    font-size: 13px;
+    font-size: 1.125rem;
     font-weight: 600;
     color: #afafaf;
     @include tablet {

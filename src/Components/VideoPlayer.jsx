@@ -2,7 +2,11 @@ import "./VideoPlayer.scss";
 function VideoPlayer() {
   return (
     <div className="video-player">
-      <video src="video.mp4" controls className="video-player__content"></video>
+      <video
+        src="https://unit-3-project-api-0a5620414506.herokuapp.com/stream"
+        controls
+        className="video-player__content"
+      ></video>
     </div>
   );
 }

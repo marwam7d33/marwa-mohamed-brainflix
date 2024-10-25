@@ -29,7 +29,12 @@ body {
     font-weight: 400;
     border: white;
     margin-bottom: 1.5625rem;
-
+    &--text {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
     &--outer {
       width: 100%;
       display: flex;
@@ -37,18 +42,23 @@ body {
     }
   }
   &__search {
-    height: 2rem;
-    width: 14rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
     padding: 0.625rem;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
   &__avatar {
-    width: 2rem;
-    height: 2rem;
+    background-size: contain;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
   }
   &__container {
+    width: 100%;
     gap: 1rem;
     display: flex;
     flex-direction: row;
@@ -62,7 +72,7 @@ body {
     height: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
   }
 }

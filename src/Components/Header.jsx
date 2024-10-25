@@ -19,7 +19,8 @@ function Header() {
         <div className="header__upload--outer">
           <button className="header__upload">
             <p className="header__text">
-              <img src="\src\assets\Icons\upload.svg"></img>UPLOAD
+              <img src="\src\assets\Icons\upload.svg"></img>
+              <p className="header__upload--text">UPLOAD</p>
             </p>
           </button>
         </div>

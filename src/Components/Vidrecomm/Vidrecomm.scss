@@ -1,0 +1,30 @@
+@use "/src/styles/partials/variables" as *;
+.video {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  &__image {
+    margin-right: 1rem;
+    border-radius: 5%;
+    width: 9rem;
+    height: 5rem;
+  }
+  &__textwrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    display: flex;
+    flex-direction: row;
+  }
+  &__container {
+    padding-bottom: 2rem;
+  }
+  &__header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $Silver;
+  }
+}
