@@ -12,7 +12,6 @@ body {
 
   @include tablet {
     @include main-body;
-    margin: 0;
     padding: 0;
   }
 }
