@@ -11,14 +11,14 @@ function Comments({ comments }) {
     <section>
       {comments.map((comment) => (
         <div key={comment.id} className="comment">
-          <div className="comment__container--inner">
-            <div className="comment__icon"></div>
-            <h3 className="comment__name">{comment.name}</h3>
-            <p className="comment__date">
-              {new Date(comment.timestamp).toLocaleDateString()}
-            </p>
+          <div className="comment__icon"></div>
+          <div className="comment__content">
+            <div className="comment__container--inner">
+              <h3 className="comment__name">{comment.name}</h3>
+              <p className="comment__date">{new Date(comment.timestamp).toLocaleDateString()}</p>
+            </div>
+            <p className="comment__text">{comment.comment}</p>
           </div>
-          <p className="comment__text">{comment.comment}</p>
         </div>
       ))}
     </section>
