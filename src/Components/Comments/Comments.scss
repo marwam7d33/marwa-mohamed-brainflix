@@ -1,8 +1,20 @@
 @use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/global" as *;
+
 .comment {
   display: flex;
-  border-bottom: 2px solid #e1e1e1;
+  border-bottom: 2px solid $Mercury;
   gap: 1rem;
+  @include tablet {
+    padding: 1rem;
+  }
+  &__container {
+    @include desktop {
+      padding-left: 9rem;
+      // width: 70%;
+    }
+  }
 
   &__container--inner {
     display: flex;
@@ -25,6 +37,11 @@
     width: 100%;
     flex-direction: row;
     justify-content: center;
+
+    @include tablet {
+      margin-top: 0;
+      font-size: 18px;
+    }
   }
   &__date {
     color: $Silver;

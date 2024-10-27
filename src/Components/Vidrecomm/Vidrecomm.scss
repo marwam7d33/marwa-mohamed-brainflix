@@ -1,4 +1,7 @@
 @use "/src/styles/partials/variables" as *;
+@use "/src/styles/partials/mixins" as *;
+@use "/src/styles/partials/global" as *;
+
 .video {
   display: flex;
   flex-direction: row;
@@ -18,13 +21,26 @@
   &__title {
     display: flex;
     flex-direction: row;
+    @include tablet {
+      font-size: 17px;
+      width: 13rem;
+    }
   }
   &__container {
     padding-bottom: 2rem;
+    @include desktop {
+      border-left: 2px solid $Mercury;
+      padding-left: 1rem;
+      padding-bottom: 2rem;
+    }
+    // padding-right: 10rem;
   }
   &__header {
     font-size: 1rem;
     font-weight: 400;
     color: $Silver;
+  }
+  &__text {
+    font-size: 18px;
   }
 }

@@ -8,14 +8,16 @@ function Comments({ comments }) {
   }
 
   return (
-    <section>
+    <section className="comment__container">
       {comments.map((comment) => (
         <div key={comment.id} className="comment">
           <div className="comment__icon"></div>
           <div className="comment__content">
             <div className="comment__container--inner">
               <h3 className="comment__name">{comment.name}</h3>
-              <p className="comment__date">{new Date(comment.timestamp).toLocaleDateString()}</p>
+              <p className="comment__date">
+                {new Date(comment.timestamp).toLocaleDateString()}
+              </p>
             </div>
             <p className="comment__text">{comment.comment}</p>
           </div>

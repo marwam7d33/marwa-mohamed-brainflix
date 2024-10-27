@@ -3,7 +3,7 @@ import "./Forms.scss";
 export default function Forms() {
   return (
     <section className="forms__container">
-      <h2 className="forms__header">Join the Conversation</h2>
+      <h2 className="forms__header">JOIN THE CONVERSATION</h2>
       <form className="forms" onSubmit={(event) => event.preventDefault()}>
         <div className="forms__fieldset">
           <img

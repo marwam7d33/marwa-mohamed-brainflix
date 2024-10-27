@@ -14,3 +14,22 @@ body {
   color: $BrainFlix-Black;
   margin: 0;
 }
+
+.Desktop {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+  }
+  &__section--one {
+    @include desktop {
+      flex-direction: column;
+      width: 70%;
+    }
+  }
+
+  &__section--two {
+    @include desktop {
+      flex-direction: column;
+    }
+  }
+}

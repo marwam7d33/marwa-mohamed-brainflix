@@ -14,10 +14,24 @@ function Videoinfo({ video }) {
             />
             {video.views.toLocaleString()}
           </p>
+          <div className="video-info__date--tabview">
+            <p>{new Date(video.timestamp).toLocaleDateString("en-US")}</p>
+          </div>
         </span>
+
         <span className="video-info__seconddetails">
+          <div className="video-info__views--tabview">
+            <p>
+              <img
+                src="/src/assets/Icons/views.svg"
+                alt=""
+                className="video-info__views--icon"
+              />
+              {video.views.toLocaleString()}
+            </p>
+          </div>
           <p className="video-info__date">
-            {new Date(video.timestamp).toLocaleString()}
+            {new Date(video.timestamp).toLocaleDateString("en-US")}
           </p>
           <p className="video-info__like">
             <img
@@ -29,6 +43,7 @@ function Videoinfo({ video }) {
           </p>
         </span>
       </div>
+
       <p className="video-info__description">{video.description}</p>
       <p className="video-info__counter">{video.comments.length} comments</p>
     </div>

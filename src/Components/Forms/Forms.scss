@@ -4,35 +4,45 @@
 .forms {
   display: flex;
   flex-direction: column;
-  line-height: 25px;
-  padding: 0 1rem;
+  line-height: 1.5625rem;
+  padding: 0 16px;
 
   @include tablet {
-    padding: 0 7rem;
+    gap: 16px;
+    display: flex;
+    /* padding: 0 112px; */
+    flex-direction: row;
+  }
+  @include desktop {
+    padding-left: 160px;
   }
   &__container {
-    border-bottom: solid $Mercury 2px;
-    padding-bottom: 0.9375rem;
+    border-bottom: solid $Mercury 0.125rem;
+    padding-bottom: 15px;
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      border: none;
+    }
   }
   &__avatar {
     object-fit: cover;
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     border-radius: 50%;
   }
   &__content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: 0 1rem;
+    padding: 0 16px;
     @include tablet {
       flex-wrap: wrap;
     }
     @include desktop {
-      padding-bottom: 2rem;
-      border-bottom: solid $Silver 2px;
+      padding-bottom: 32px;
+      border-bottom: solid $Silver 0.125rem;
     }
   }
 
@@ -43,37 +53,63 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
   }
   &__input {
-    height: 8rem;
+    height: 128px;
     font-family: "avenir";
     color: black;
     width: 100%;
-    border-radius: 4px;
-    padding: 12px;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+
+    @include tablet {
+      color: black;
+      font-size: 1.1875rem;
+      padding: 0.75rem;
+      margin: 0;
+      width: 432px;
+      display: flex;
+      height: 3.125rem;
+      flex-direction: row;
+      align-content: flex-end;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
   }
-  //   &__name {
-  //     // padding-bottom: 10px;
-  //   }
 
   &__button {
     color: $White;
     font-weight: 600;
     background-color: $BrainFlix-Blue;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     width: 100%;
-    height: 2.5rem;
+    height: 40px;
     border-color: $Silver;
     border: none;
     @include tablet {
-      width: 30%;
+      height: 3.125rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
     }
     &-outer {
-      padding-left: 4rem;
+      padding-left: 64px;
       display: flex;
       align-content: flex-end;
       justify-content: flex-end;
+      @include tablet {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        align-content: flex-end;
+        justify-content: flex-end;
+      }
+      @include desktop {
+        width: 128px;
+      }
     }
     &:hover {
       background-color: $BrainFlix-DarkBlue;
@@ -81,41 +117,33 @@
     }
   }
   &__fieldset {
-    gap: 1rem;
+    gap: 16px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    // padding-bottom: 1.25rem;
 
     @include tablet {
       flex-direction: row;
       justify-content: center;
-      border-bottom: solid $Silver 2px;
     }
     @include desktop {
-      padding: 1rem 14rem;
       border-bottom: #afafaf;
     }
   }
   &__header {
-    padding-left: 83px;
-    font-size: 1.125rem;
+    padding-left: 5.1875rem;
+    font-size: 18px;
     font-weight: 600;
-    color: #afafaf;
+    color: $Silver;
     @include tablet {
-      padding: 1rem;
-      font-size: 2rem;
+      margin-bottom: 0.125rem;
+      font-size: 1rem;
       font-weight: 600;
     }
     @include desktop {
-      padding: 0 7rem;
-      font-size: 2.5625rem;
-      font-weight: 600;
+      font-weight: 400;
+      padding-left: 14.25rem;
+      font-size: 1.5rem;
     }
-  }
-  &__button--outer {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
   }
 }

@@ -5,6 +5,16 @@
   display: flex;
   flex-direction: column;
   font-family: "avenir";
+  @include tablet {
+    padding-left: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  @include desktop {
+    padding-left: 10rem;
+    // width: 71%;
+  }
+
   &__title {
     @include mobile-only-header;
     display: flex;
@@ -15,8 +25,7 @@
     @include tablet {
       @include main-header;
 
-      padding-left: 3rem;
-      display: flex;
+      font-size: 40px;
       border-bottom: none;
       padding-top: 1rem;
       padding-bottom: 0;
@@ -30,7 +39,8 @@
     border-bottom: solid $Mercury 2px;
 
     @include tablet {
-      gap: 8rem;
+      border-bottom: none;
+      gap: 20rem;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -61,14 +71,31 @@
     color: $Silver;
     gap: 10px;
     display: flex;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__date {
+    @include tablet {
+      display: none;
+    }
   }
   &__like {
     display: flex;
 
     gap: 10px;
+    &--icon {
+      width: 17px;
+      height: 22px;
+    }
   }
   &__description {
     font-size: 18px;
+    @include tablet {
+      padding: 20px 0;
+      margin: 0;
+      border-top: solid $Mercury 2px;
+    }
   }
   &__counter {
     font-weight: 600;
@@ -76,5 +103,28 @@
   }
   &__text {
     font-weight: 600;
+  }
+  &__views--icon {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+  }
+  &__date--tabview {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+      color: $Silver;
+    }
+  }
+  &__views--tabview {
+    display: none;
+    @include tablet {
+      display: inline-block;
+      & p {
+        gap: 5px;
+        display: flex;
+      }
+    }
   }
 }
