@@ -24,6 +24,10 @@ export default function Forms() {
         <div className="forms__button-outer">
           <button type="submit" className="forms__button">
             COMMENT
+            <img
+              className="forms__button--icon"
+              src="\src\assets\Icons\add_comment.svg"
+            ></img>
           </button>
         </div>
       </form>

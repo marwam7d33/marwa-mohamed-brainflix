@@ -4,10 +4,10 @@
 
 .video-player {
   display: flex;
-  border-bottom: 2px solid #e1e1e1;
+  border-bottom: 0.125rem solid #e1e1e1;
   flex-direction: column;
   flex-wrap: wrap;
-  border-bottom: 2px solid #e1e1e1;
+  border-bottom: 0.125rem solid #e1e1e1;
 
   &__content {
     width: 100%;

@@ -25,8 +25,8 @@
     flex-grow: 1;
   }
   &__icon {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     background-color: #e0e0e0;
     margin-top: 0.5rem;
@@ -40,7 +40,7 @@
 
     @include tablet {
       margin-top: 0;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
   &__date {

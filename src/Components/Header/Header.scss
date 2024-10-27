@@ -28,8 +28,7 @@
     width: 100%;
     background-color: $BrainFlix-Blue;
     color: $White;
-    /* padding: 10px 20px; */
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     font-weight: 400;
     border: $White;
     margin-bottom: 1.5625rem;
@@ -64,12 +63,11 @@
     align-items: center;
     width: 14rem;
     padding: 0.625rem;
-    border-radius: 5px;
-    border: 1px solid $Silver;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid $Silver;
     background-color: #e1e1e15c;
     @include tablet {
       @include main-button;
-      width: 100%;
     }
     @include desktop {
       width: 100%;
@@ -122,11 +120,11 @@
   }
   &__search--icon {
     position: relative;
-    top: -33px;
-    left: 15px;
+    top: -2.0625rem;
+    left: 0.9375rem;
     @include tablet {
       top: 0px;
-      left: -204px;
+      left: -12.75rem;
     }
     @include desktop {
       display: none;

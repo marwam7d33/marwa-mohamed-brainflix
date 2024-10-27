@@ -14,7 +14,7 @@ function Header() {
           <div className="header__search--outer">
             <input
               type="text"
-              placeholder="            Search"
+              placeholder="Search"
               className="header__search"
             />
             {/* <img

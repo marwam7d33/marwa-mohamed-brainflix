@@ -8,7 +8,7 @@
 
 body {
   @include mobile-body;
-  color: $BrainFlix-Black;
+  // color: $BrainFlix-Black;
 
   @include tablet {
     @include main-body;
