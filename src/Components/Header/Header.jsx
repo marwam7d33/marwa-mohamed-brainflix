@@ -4,11 +4,29 @@ function Header() {
     <nav>
       <header className="header">
         <div className="header__img-container">
-          <img src=".\src\assets\Logo\BrainFlix-logo.svg" alt="BrainFlix" className="header__logo" />
+          <img
+            src=".\src\assets\Logo\BrainFlix-logo.svg"
+            alt="BrainFlix"
+            className="header__logo"
+          />
         </div>
         <div className="header__container">
-          <input type="text" placeholder="Search" className="header__search" />
-          <img src=".\src\assets\Images\Mohan-muruge.jpg" alt="Profile" className="header__avatar" />
+          <div className="header__search--outer">
+            <input
+              type="text"
+              placeholder="            Search"
+              className="header__search"
+            />
+            {/* <img
+              className="header__search--icon"
+              src="\src\assets\Icons\search.svg"
+            ></img> */}
+          </div>
+          <img
+            src=".\src\assets\Images\Mohan-muruge.jpg"
+            alt="Profile"
+            className="header__avatar"
+          />
         </div>
         <div className="header__upload--outer">
           <button className="header__upload">
