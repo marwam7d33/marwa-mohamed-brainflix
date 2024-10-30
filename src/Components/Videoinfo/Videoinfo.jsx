@@ -1,24 +1,42 @@
 import "./Videoinfo.scss";
+
 function Videoinfo({ video }) {
+  if (!video) {
+    return <div>Loading video information...</div>; // Display loading if video is not ready
+  }
+
+  const {
+    title = "Title not available",
+    channel = "Channel not available",
+    views = 0,
+    timestamp,
+    likes = 0,
+    description = "Description not available",
+    comments = [],
+  } = video;
+
   return (
     <div className="video-info">
-      <h1 className="video-info__title">{video.title}</h1>
+      <h1 className="video-info__title">{title}</h1>
       <div className="video-info__details">
         <span className="video-info__firstdetails">
-          <p className="video-info__text">By {video.channel}</p>
+          <p className="video-info__text">By {channel}</p>
           <p className="video-info__views">
             <img
               src="/src/assets/Icons/views.svg"
               alt=""
               className="video-info__views--icon"
             />
-            {video.views.toLocaleString()}
+            {views.toLocaleString()}
           </p>
           <div className="video-info__date--tabview">
-            <p>{new Date(video.timestamp).toLocaleDateString("en-US")}</p>
+            <p>
+              {timestamp
+                ? new Date(timestamp).toLocaleDateString("en-US")
+                : "Date not available"}
+            </p>
           </div>
         </span>
-
         <span className="video-info__seconddetails">
           <div className="video-info__views--tabview">
             <p>
@@ -27,11 +45,13 @@ function Videoinfo({ video }) {
                 alt=""
                 className="video-info__views--icon"
               />
-              {video.views.toLocaleString()}
+              {views.toLocaleString()}
             </p>
           </div>
           <p className="video-info__date">
-            {new Date(video.timestamp).toLocaleDateString("en-US")}
+            {timestamp
+              ? new Date(timestamp).toLocaleDateString("en-US")
+              : "Date not available"}
           </p>
           <p className="video-info__like">
             <img
@@ -39,13 +59,12 @@ function Videoinfo({ video }) {
               alt=""
               className="video-info__like--icon"
             />
-            {video.likes.toLocaleString()}
+            {likes.toLocaleString()}
           </p>
         </span>
       </div>
-
-      <p className="video-info__description">{video.description}</p>
-      <p className="video-info__counter">{video.comments.length} comments</p>
+      <p className="video-info__description">{description}</p>
+      <p className="video-info__counter">{comments.length} comments</p>
     </div>
   );
 }

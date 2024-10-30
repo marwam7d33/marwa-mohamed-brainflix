@@ -1,14 +1,18 @@
+import { Link } from "react-router-dom";
+
 import "./Header.scss";
 function Header() {
   return (
     <nav>
       <header className="header">
         <div className="header__img-container">
-          <img
-            src=".\src\assets\Logo\BrainFlix-logo.svg"
-            alt="BrainFlix"
-            className="header__logo"
-          />
+          <Link to="/">
+            <img
+              src="./src/assets/Logo/BrainFlix-logo.svg"
+              alt="BrainFlix"
+              className="header__logo"
+            />
+          </Link>
         </div>
         <div className="header__container">
           <div className="header__search--outer">
@@ -29,12 +33,14 @@ function Header() {
           />
         </div>
         <div className="header__upload--outer">
-          <button className="header__upload">
-            <p className="header__text">
-              <img src="\src\assets\Icons\upload.svg"></img>
-              <span className="header__upload--text">UPLOAD</span>
-            </p>
-          </button>
+          <Link to="/upload">
+            <button className="header__upload">
+              <p className="header__text">
+                <img src="./src/assets/Icons/upload.svg" alt="Upload icon" />
+                <span className="header__upload--text">UPLOAD</span>
+              </p>
+            </button>
+          </Link>
         </div>
         <img
           src=".\src\assets\Images\Mohan-muruge.jpg"

@@ -1,23 +1,16 @@
-import "../Vidrecomm/Vidrecomm.scss";
-// import Comments from "../Comments/Comments";
-function VideoRecomm({ videos, setSelectedVideo, selectedVideo }) {
-  //  get d comments
-  // const comments = selectedVideo.comments || [];
+import "./VideoRecomm.scss";
+
+function VideoRecomm({ videos, onVideoSelect, selectedVideo }) {
   return (
     <section className="video__container">
-      {/* <Comments comments={comments} /> */}
-
       <h3 className="video__header">NEXT VIDEOS</h3>
       {videos
-        .filter((video) => video.id !== selectedVideo.id)
+        .filter((video) => video.id !== selectedVideo?.id) // Filter out the currently selected video
         .map((video) => (
           <div
             className="video"
             key={video.id}
-            onClick={() => {
-              console.log(video);
-              setSelectedVideo(video); // Update selected video on click
-            }}
+            onClick={() => onVideoSelect(video.id)} // Call the function to fetch video details by ID
           >
             <img className="video__image" src={video.image} alt={video.title} />
             <div className="video__textwrapper">
