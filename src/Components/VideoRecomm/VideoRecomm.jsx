@@ -1,6 +1,10 @@
 import "./VideoRecomm.scss";
 
-function VideoRecomm({ videos, onVideoSelect, selectedVideo }) {
+import { useNavigate } from "react-router-dom";
+
+function VideoRecomm({ videos, selectedVideo }) {
+  const navigate = useNavigate();
+
   return (
     <section className="video__container">
       <h3 className="video__header">NEXT VIDEOS</h3>
@@ -10,7 +14,7 @@ function VideoRecomm({ videos, onVideoSelect, selectedVideo }) {
           <div
             className="video"
             key={video.id}
-            onClick={() => onVideoSelect(video.id)} // Call the function to fetch video details by ID
+            onClick={() => navigate(`/videos/${video.id}`)} // Navigate to the video details route
           >
             <img className="video__image" src={video.image} alt={video.title} />
             <div className="video__textwrapper">

@@ -1,12 +1,44 @@
+import { useParams, useNavigate } from "react-router-dom";
 import VideoPlayer from "../../Components/VideoPlayer/VideoPlayer";
 import Videoinfo from "../../Components/Videoinfo/Videoinfo";
 import VideoRecomm from "../../Components/VideoRecomm/VideoRecomm";
 import Comments from "../../Components/Comments/Comments";
-import Forms from "../../Components/Comments/Comments";
-import React from "react";
+import Forms from "../../Components/Forms/Forms";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const HomePage = ({ videos, selectedVideo, setSelectedVideo }) => {
-  const comments = selectedVideo?.comments || []; //  get comments for the selected video
+const HomePage = ({ videos }) => {
+  const { id } = useParams(); // Get the video ID from the URL
+  const navigate = useNavigate(); // Use navigate for video selection
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  //  video details by ID
+  const getVideoById = async (id) => {
+    try {
+      const response = await axios.get(
+        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${id}?api_key=8d145847-4906-4f86-94d0-2880fd6b568c`
+      );
+      setSelectedVideo(response.data);
+    } catch (error) {
+      console.error("Error fetching video details:", error);
+    }
+  };
+
+  //  the selected video based on URL ID or default to the first video
+  //if statement
+  // useEffect(() => {
+  //   if (videos.length > 0) {
+  //     const firstVid = id || videos[0].id;
+  //   }
+  //   getVideoById(firstVid);
+  // }, [id, videos]);
+
+  useEffect(() => {
+    if (videos.length > 0) {
+      const firstVideoId = id || videos[0].id;
+      getVideoById(firstVideoId);
+    }
+  }, [id, videos]);
 
   return (
     <>
@@ -17,14 +49,13 @@ const HomePage = ({ videos, selectedVideo, setSelectedVideo }) => {
           <div>Loading video...</div>
         )}
       </div>
-
       <section className="Desktop">
         <div className="Desktop__section--one">
           {selectedVideo ? (
             <>
               <Videoinfo video={selectedVideo} />
               <Forms video={selectedVideo} />
-              <Comments comments={comments} />
+              <Comments comments={selectedVideo.comments || []} />
             </>
           ) : (
             <div>Loading video information...</div>
@@ -33,7 +64,7 @@ const HomePage = ({ videos, selectedVideo, setSelectedVideo }) => {
         <div className="Desktop__section--two">
           <VideoRecomm
             videos={videos}
-            onVideoSelect={setSelectedVideo} // Pass the fetch function as a prop
+            onVideoSelect={(videoId) => navigate(`/videos/${videoId}`)}
             selectedVideo={selectedVideo}
           />
         </div>
