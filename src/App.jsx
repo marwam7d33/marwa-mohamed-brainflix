@@ -5,7 +5,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
-import VideoUploadPage from "./pages/VideoUpload/VideoUpload";
+import VideoUpload from "./pages/VideoUpload/VideoUpload";
 import Header from "./Components/Header/Header";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -52,7 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage videos={videos} />} />
         <Route path="/videos/:id" element={<HomePage videos={videos} />} />
-        <Route path="/upload" element={<VideoUploadPage videos={videos} />} />
+        <Route path="/upload" element={<VideoUpload />} />
       </Routes>
     </BrowserRouter>
   );
