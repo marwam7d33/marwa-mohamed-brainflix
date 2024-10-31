@@ -17,6 +17,7 @@
 
 .upload-page__thumbnail {
   margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .upload-page__thumbnail h3 {
@@ -31,6 +32,10 @@
   width: 100%;
   max-width: 480px;
   height: auto;
+  @include tablet {
+    height: 14rem;
+    width: 30rem;
+  }
 }
 
 .upload-page__label {
@@ -48,6 +53,7 @@
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: $Mercury;
 }
 
 .upload-page__textarea {
@@ -62,23 +68,26 @@
 }
 
 .upload-page__button {
+  display: flex;
   flex: 1;
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: $BrainFlix-Blue;
+  color: $White;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .upload-page__cancel {
   flex: 1;
   padding: 10px;
   background-color: transparent;
-  color: #007bff;
+  color: $BrainFlix-Blue;
   border: none;
   cursor: pointer;
   font-size: 14px;
-  text-decoration: underline;
+  text-decoration: none;
 }
