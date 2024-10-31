@@ -43,18 +43,16 @@ function App() {
     getVideos();
   }, []);
 
-  // if (!videos){
-  //   onclick()=>{
+  // if (!videos)
+  //   return <div>loading videos <div>
 
-  //   }
-  // }
   return (
     <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage videos={videos} />} />
         <Route path="/videos/:id" element={<HomePage videos={videos} />} />
-        <Route path="/upload" element={<VideoUploadPage />} />
+        <Route path="/upload" element={<VideoUploadPage videos={videos} />} />
       </Routes>
     </BrowserRouter>
   );

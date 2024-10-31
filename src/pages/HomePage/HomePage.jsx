@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import VideoPlayer from "../../Components/VideoPlayer/VideoPlayer";
 import Videoinfo from "../../Components/Videoinfo/Videoinfo";
 import VideoRecomm from "../../Components/VideoRecomm/VideoRecomm";
@@ -8,8 +8,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const HomePage = ({ videos }) => {
-  const { id } = useParams(); // Get the video ID from the URL
-  const navigate = useNavigate(); // Use navigate for video selection
+  const { id } = useParams(); //
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   //  video details by ID
@@ -42,6 +41,7 @@ const HomePage = ({ videos }) => {
 
   return (
     <>
+      {/* <h1>{id.length}</h1> */}
       <div>
         {selectedVideo ? (
           <VideoPlayer video={selectedVideo} />
@@ -62,11 +62,7 @@ const HomePage = ({ videos }) => {
           )}
         </div>
         <div className="Desktop__section--two">
-          <VideoRecomm
-            videos={videos}
-            onVideoSelect={(videoId) => navigate(`/videos/${videoId}`)}
-            selectedVideo={selectedVideo}
-          />
+          <VideoRecomm videos={videos} selectedVideo={selectedVideo} />
         </div>
       </section>
     </>

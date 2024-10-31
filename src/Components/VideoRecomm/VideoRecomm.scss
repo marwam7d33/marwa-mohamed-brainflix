@@ -7,7 +7,11 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-
+  text-decoration: none;
+  color: $BrainFlix-DarkBlack;
+  &--active {
+    color: $BrainFlix-Blue;
+  }
   &__image {
     margin-right: 1rem;
     border-radius: 5%;
