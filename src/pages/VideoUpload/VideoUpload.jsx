@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./VideoUpload.scss";
 
-function VideoUpload({ addVideo }) {
+function VideoUpload() {
   // const [thumbnail, setThumbnail] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -27,18 +27,6 @@ function VideoUpload({ addVideo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && description) {
-      const newVideo = {
-        // id: video.id,
-        image: "https://via.placeholder.com/150", // Placeholder
-        title,
-        description,
-        channel: "User001 name",
-        comments: [],
-      };
-
-      // Add the new video to the video list
-      addVideo(newVideo);
-
       toast.success("Uploaded successfully", {
         position: "bottom-right",
       });
@@ -54,7 +42,7 @@ function VideoUpload({ addVideo }) {
         <div className="upload-page__thumbnail">
           <h3>VIDEO THUMBNAIL</h3>
           <img
-            src="https://via.placeholder.com/150"
+            src=".\src\assets\Images\Upload-video-preview.jpg"
             alt="Video Thumbnail"
             className="upload-page__thumbnail-image"
           />

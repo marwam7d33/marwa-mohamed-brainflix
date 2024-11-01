@@ -15,10 +15,6 @@ import "./App.scss";
 function App() {
   const [videos, setVideos] = useState([]);
 
-  const addVideo = (newVideo) => {
-    setVideos([...videos, newVideo]);
-  };
-
   //axios get
   const getVideos = async () => {
     try {
@@ -56,7 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage videos={videos} />} />
         <Route path="/videos/:id" element={<HomePage videos={videos} />} />
-        <Route path="/upload" element={<VideoUpload addVideo={addVideo} />} />
+        <Route path="/upload" element={<VideoUpload />} />
       </Routes>
     </BrowserRouter>
   );
