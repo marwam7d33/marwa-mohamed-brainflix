@@ -12,9 +12,13 @@
     @include mobile-only-header;
 
     line-height: 32px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 2rem;
-    /* padding: 1.25rem 0; */
+    @include tablet {
+      border-bottom: 2px solid $Mercury;
+      padding-bottom: 2rem;
+      font-weight: 700;
+    }
   }
 }
 
@@ -25,10 +29,13 @@
 
 .upload-page__thumbnail h3 {
   @include main-subheader;
-  font-size: 1.1875rem;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
   color: $Silver;
   margin-bottom: 8px;
+  @include desktop {
+    font-weight: 400;
+  }
 }
 
 .upload-page__thumbnail-image {
@@ -36,16 +43,22 @@
   max-width: 480px;
   height: auto;
   @include tablet {
-    height: 14rem;
-    width: 30rem;
+    height: 13rem;
+    width: 24rem;
   }
 }
 
 .upload-page__label {
   @include main-subheader;
+  font-weight: 600;
   color: $Silver;
   margin-bottom: 5px;
   display: block;
+
+  @include desktop {
+    font-weight: 400;
+    font-size: 0.6875rem;
+  }
 }
 
 .upload-page__input,
@@ -56,7 +69,7 @@
   font-size: 14px;
   border: 1px solid $Silver;
   border-radius: 4px;
-  background-color: $Mercury;
+  background-color: #e1e1e170;
 }
 
 .upload-page__textarea {
@@ -68,6 +81,13 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @include tablet {
+    padding-top: 2rem;
+    border-top: solid $Mercury 0.125rem;
+    display: flex;
+    flex-direction: row-reverse;
+  }
 }
 
 .upload-page__button {
@@ -81,6 +101,17 @@
   font-size: 14px;
   flex-direction: row;
   justify-content: center;
+
+  @include tablet {
+    display: flex;
+    height: 3rem;
+    order: 1;
+    flex: none;
+    width: 13rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .upload-page__cancel {
@@ -91,4 +122,31 @@
   border: none;
   font-size: 14px;
   text-decoration: none;
+
+  @include tablet {
+    display: flex;
+    height: 3rem;
+    order: 2;
+    flex: none;
+    width: 13rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.upload-page__section--inner {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.upload-page__title-container {
+  @include desktop {
+    padding: 2rem;
+    width: 100%;
+  }
 }

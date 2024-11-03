@@ -46,31 +46,37 @@ function VideoUpload() {
     <div className="upload-page">
       <h1 className="upload-page__header">Upload Video</h1>
       <form className="upload-page__form" onSubmit={handleSubmit}>
-        <div className="upload-page__thumbnail">
-          <h3>VIDEO THUMBNAIL</h3>
-          <img
-            src={thumbnailImage}
-            alt="Video Thumbnail"
-            className="upload-page__thumbnail-image"
-          />
-        </div>
+        <section className="upload-page__section--inner">
+          <div className="upload-page__thumbnail">
+            <h3>VIDEO THUMBNAIL</h3>
+            <img
+              src={thumbnailImage}
+              alt="Video Thumbnail"
+              className="upload-page__thumbnail-image"
+            />
+          </div>
 
-        <label className="upload-page__label">TITLE YOUR VIDEO</label>
-        <input
-          type="text"
-          placeholder="Add a title to your video"
-          value={title}
-          onChange={handleChangeTitle}
-          className="upload-page__input"
-        />
+          <div className="upload-page__title-container">
+            <label className="upload-page__label">TITLE YOUR VIDEO</label>
+            <input
+              type="text"
+              placeholder="Add a title to your video"
+              value={title}
+              onChange={handleChangeTitle}
+              className="upload-page__input"
+            />
 
-        <label className="upload-page__label">ADD A VIDEO DESCRIPTION</label>
-        <textarea
-          placeholder="Add a description to your video"
-          value={description}
-          onChange={handleChangeDescription}
-          className="upload-page__textarea"
-        />
+            <label className="upload-page__label">
+              ADD A VIDEO DESCRIPTION
+            </label>
+            <textarea
+              placeholder="Add a description to your video"
+              value={description}
+              onChange={handleChangeDescription}
+              className="upload-page__textarea"
+            />
+          </div>
+        </section>
 
         <div className="upload-page__actions">
           <button className="upload-page__button">PUBLISH</button>
