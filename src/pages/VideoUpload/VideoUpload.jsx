@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./VideoUpload.scss";
+import thumbnailImage from "../../assets/Images/Upload-video-preview.jpg";
 
 function VideoUpload() {
   // const [thumbnail, setThumbnail] = useState("");
@@ -21,15 +22,21 @@ function VideoUpload() {
   };
 
   const isUploadValid = () => {
-    return title && description;
+    return title.trim() && description.trim();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title && description) {
+    if (isUploadValid()) {
       toast.success("Uploaded successfully", {
         position: "bottom-right",
+        autoClose: 2000,
       });
+
+      setTimeout(() => {
+        console.log("delayed for 2sec");
+        navigate("/");
+      }, 3000);
     } else {
       toast.error("Failed to upload, please fill in all fields");
     }
@@ -42,7 +49,7 @@ function VideoUpload() {
         <div className="upload-page__thumbnail">
           <h3>VIDEO THUMBNAIL</h3>
           <img
-            src=".\src\assets\Images\Upload-video-preview.jpg"
+            src={thumbnailImage}
             alt="Video Thumbnail"
             className="upload-page__thumbnail-image"
           />
@@ -66,10 +73,7 @@ function VideoUpload() {
         />
 
         <div className="upload-page__actions">
-          <button type="submit" className="upload-page__button">
-            {" "}
-            PUBLISH
-          </button>
+          <button className="upload-page__button">PUBLISH</button>
           <button
             type="button"
             className="upload-page__cancel"
