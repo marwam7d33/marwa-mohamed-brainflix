@@ -1,8 +1,6 @@
 import "./Comments.scss";
 
 function Comments({ comments }) {
-  // console.log("Comments received:", comments);
-
   if (!comments || comments.length === 0) {
     return <p>No comments are being received.</p>;
   }

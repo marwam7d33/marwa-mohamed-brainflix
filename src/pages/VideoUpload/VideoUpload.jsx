@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./VideoUpload.scss";
 import thumbnailImage from "../../assets/Images/Upload-video-preview.jpg";
+import publish from "../../assets/Icons/publish.svg";
 
 function VideoUpload() {
   // const [thumbnail, setThumbnail] = useState("");
@@ -34,7 +35,6 @@ function VideoUpload() {
       });
 
       setTimeout(() => {
-        console.log("delayed for 2sec");
         navigate("/");
       }, 3000);
     } else {
@@ -79,7 +79,18 @@ function VideoUpload() {
         </section>
 
         <div className="upload-page__actions">
-          <button className="upload-page__button">PUBLISH</button>
+          <button className="upload-page__button">
+            {" "}
+            <span>
+              {" "}
+              <img
+                src={publish}
+                alt="publish icon"
+                className="upload-page__icon"
+              />
+            </span>
+            <p className="upload-page__text">PUBLISH</p>
+          </button>
           <button
             type="button"
             className="upload-page__cancel"

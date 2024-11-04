@@ -2,7 +2,7 @@ import "./Videoinfo.scss";
 
 function Videoinfo({ video }) {
   if (!video) {
-    return <div>Loading video information...</div>; // Display loading if video is not ready
+    return <div>Loading video information...</div>; //  loading if video is not ready
   }
 
   const {

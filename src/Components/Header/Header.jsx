@@ -15,11 +15,11 @@ function Header() {
         </div>
         <div className="header__container">
           <div className="header__search--outer">
-            <input type="text" placeholder="Search" className="header__search" />
-            {/* <img
-              className="header__search--icon"
-              src="\src\assets\Icons\search.svg"
-            ></img> */}
+            <input
+              type="text"
+              placeholder="Search"
+              className="header__search"
+            />
           </div>
           <img src={mohan} alt="Profile" className="header__avatar" />
         </div>
@@ -33,7 +33,11 @@ function Header() {
             </button>
           </Link>
         </div>
-        <img src={mohan} alt="Profile" className="header__avatar header__avatar--tablet" />
+        <img
+          src={mohan}
+          alt="Profile"
+          className="header__avatar header__avatar--tablet"
+        />
       </header>
     </nav>
   );

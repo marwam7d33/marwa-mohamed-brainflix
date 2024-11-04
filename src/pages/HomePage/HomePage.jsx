@@ -24,15 +24,6 @@ const HomePage = ({ videos }) => {
     }
   };
 
-  //  the selected video based on URL ID or default to the first video
-  //if statement
-  // useEffect(() => {
-  //   if (videos.length > 0) {
-  //     const firstVid = id || videos[0].id;
-  //   }
-  //   getVideoById(firstVid);
-  // }, [id, videos]);
-
   useEffect(() => {
     if (videos.length > 0) {
       const firstVideoId = id || videos[0].id;
@@ -42,7 +33,6 @@ const HomePage = ({ videos }) => {
 
   return (
     <>
-      {/* <h1>{id.length}</h1> */}
       <div>
         {selectedVideo ? (
           <VideoPlayer video={selectedVideo} />

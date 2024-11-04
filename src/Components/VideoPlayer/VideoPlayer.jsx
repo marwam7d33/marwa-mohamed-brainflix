@@ -8,7 +8,7 @@ function VideoPlayer({ video }) {
   return (
     <div className="video-player">
       <video
-        src={video.video} // Make sure this property matches your API response
+        src={video.video}
         controls
         poster={video.image || "/path/to/default/poster.jpg"}
         className="video-player__content"
