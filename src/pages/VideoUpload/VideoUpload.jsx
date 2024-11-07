@@ -2,17 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 import "./VideoUpload.scss";
 import thumbnailImage from "../../assets/Images/Upload-video-preview.jpg";
 import publish from "../../assets/Icons/publish.svg";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function VideoUpload() {
-  // const [thumbnail, setThumbnail] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
-  //   setThumbnail(event.target.value);
-  // };
 
   const handleChangeTitle = (event) => {
     setTitle(event.target.value);
@@ -26,19 +26,36 @@ function VideoUpload() {
     return title.trim() && description.trim();
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isUploadValid()) {
+    if (!isUploadValid()) {
+      toast.error("Failed to upload, please fill in all fields");
+      return;
+    }
+
+    // Prepare video data
+    const newVideo = {
+      title,
+      description,
+      image: `${BASE_URL}/images/Upload-video-preview.jpg`, // Hardcoded image path
+    };
+
+    try {
+      // Send POST request
+      await axios.post(`${BASE_URL}/videos`, newVideo);
+
       toast.success("Uploaded successfully", {
         position: "bottom-right",
         autoClose: 2000,
       });
 
+      // Redirect after success
       setTimeout(() => {
         navigate("/");
       }, 3000);
-    } else {
-      toast.error("Failed to upload, please fill in all fields");
+    } catch (error) {
+      console.error("Error uploading video:", error);
+      toast.error("Failed to upload video. Please try again.");
     }
   };
 
@@ -79,10 +96,8 @@ function VideoUpload() {
         </section>
 
         <div className="upload-page__actions">
-          <button className="upload-page__button">
-            {" "}
+          <button type="submit" className="upload-page__button">
             <span>
-              {" "}
               <img
                 src={publish}
                 alt="publish icon"

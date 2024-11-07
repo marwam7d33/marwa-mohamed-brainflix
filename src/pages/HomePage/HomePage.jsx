@@ -6,6 +6,7 @@ import Comments from "../../Components/Comments/Comments";
 import Forms from "../../Components/Forms/Forms";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 const HomePage = ({ videos }) => {
   const { id } = useParams(); //
@@ -14,9 +15,7 @@ const HomePage = ({ videos }) => {
   //  video details by ID
   const getVideoById = async (id) => {
     try {
-      const response = await axios.get(
-        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${id}?api_key=8d145847-4906-4f86-94d0-2880fd6b568c`
-      );
+      const response = await axios.get(`${BASE_URL}/videos/${id}`);
       setSelectedVideo(response.data);
       window.scroll(0, 0);
     } catch (error) {

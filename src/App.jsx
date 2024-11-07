@@ -12,15 +12,27 @@ import axios from "axios";
 
 import "./App.scss";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 function App() {
   const [videos, setVideos] = useState([]);
+  const [server, setServer] = useState("");
+
+  //server condition
+
+  // const serverStatus = async () => {
+  //   try {
+  //     const { data } = await axios.get(`${BASE_URL}`);
+  //     setServer(data);
+  //   } catch (error) {
+  //     console.error("Your server is down");
+  //   }
+  // };
 
   //axios get
   const getVideos = async () => {
     try {
-      const response = await axios.get(
-        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=8d145847-4906-4f86-94d0-2880fd6b568c`
-      );
+      const response = await axios.get(`${BASE_URL}/videos`);
       setVideos(response.data);
     } catch (error) {
       console.error("Error fetching videos:", error);
@@ -29,6 +41,7 @@ function App() {
 
   useEffect(() => {
     getVideos();
+    // serverStatus();
   }, []);
 
   return (
