@@ -6,13 +6,25 @@ import Comments from "../../Components/Comments/Comments";
 import Forms from "../../Components/Forms/Forms";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-const HomePage = ({ videos }) => {
-  const { id } = useParams(); //
+const HomePage = () => {
+  const { id } = useParams();
+  const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  //  video details by ID
+  // Fetch videos
+  const getVideos = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/videos`);
+      setVideos(response.data);
+    } catch (error) {
+      console.error("Error fetching videos:", error);
+    }
+  };
+
+  // Fetch video by ID
   const getVideoById = async (id) => {
     try {
       const response = await axios.get(`${BASE_URL}/videos/${id}`);
@@ -22,6 +34,10 @@ const HomePage = ({ videos }) => {
       console.error("Error fetching video details:", error);
     }
   };
+
+  useEffect(() => {
+    getVideos();
+  }, []);
 
   useEffect(() => {
     if (videos.length > 0) {
