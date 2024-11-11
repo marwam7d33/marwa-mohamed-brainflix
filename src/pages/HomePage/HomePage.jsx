@@ -35,6 +35,25 @@ const HomePage = () => {
     }
   };
 
+  // Add a new comment
+  const addComment = async (commentText) => {
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/videos/${selectedVideo.id}/comments`,
+        {
+          comment: commentText,
+        }
+      );
+
+      setSelectedVideo((prevState) => ({
+        ...prevState,
+        comments: [response.data, ...prevState.comments],
+      }));
+    } catch (error) {
+      console.error("Error adding comment:", error);
+    }
+  };
+
   useEffect(() => {
     getVideos();
   }, []);
@@ -60,7 +79,7 @@ const HomePage = () => {
           {selectedVideo ? (
             <>
               <Videoinfo video={selectedVideo} />
-              <Forms video={selectedVideo} />
+              <Forms addComment={addComment} />
               <Comments comments={selectedVideo.comments || []} />
             </>
           ) : (

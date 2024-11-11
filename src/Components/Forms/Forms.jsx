@@ -1,23 +1,35 @@
+import { useState } from "react";
 import "./Forms.scss";
 
-export default function Forms() {
+export default function Forms({ addComment }) {
+  const [commentText, setCommentText] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (commentText.trim()) {
+      addComment(commentText);
+      setCommentText("");
+    }
+  };
+
   return (
     <section className="forms__container">
       <h2 className="forms__header">JOIN THE CONVERSATION</h2>
-      <form className="forms" onSubmit={(event) => event.preventDefault()}>
+      <form className="forms" onSubmit={handleSubmit}>
         <div className="forms__fieldset">
           <img
             src="\src\assets\Images\Mohan-muruge.jpg"
             alt="avatar"
             className="forms__avatar"
           />
-
           <div className="forms__input-container">
             <textarea
               id="forms__comment"
               className="forms__input"
               placeholder="Add a new comment"
               name="forms__comment"
+              value={commentText}
+              onChange={(e) => setCommentText(e.target.value)}
             ></textarea>
           </div>
         </div>
@@ -27,7 +39,8 @@ export default function Forms() {
             <img
               className="forms__button--icon"
               src="\src\assets\Icons\add_comment.svg"
-            ></img>
+              alt="comment icon"
+            />
           </button>
         </div>
       </form>

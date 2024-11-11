@@ -33,15 +33,13 @@ function VideoUpload() {
       return;
     }
 
-    // Prepare video data
     const newVideo = {
       title,
       description,
-      image: `${BASE_URL}/images/Upload-video-preview.jpg`, // Hardcoded image path
+      image: `${BASE_URL}/images/Upload-video-preview.jpg`,
     };
 
     try {
-      // Send POST request
       await axios.post(`${BASE_URL}/videos`, newVideo);
 
       toast.success("Uploaded successfully", {
@@ -49,7 +47,6 @@ function VideoUpload() {
         autoClose: 2000,
       });
 
-      // Redirect after success
       setTimeout(() => {
         navigate("/");
       }, 3000);
