@@ -17,7 +17,7 @@ function VideoRecomm({ videos, selectedVideo }) {
             <img className="video__image" src={video.image} alt={video.title} />
             <div className="video__textwrapper">
               <h3 className="video__title">{video.title}</h3>
-              <p className="video__text">{video.channel}</p>
+              <div className="video__text">{video.channel}</div>
             </div>
           </NavLink>
         ))}
