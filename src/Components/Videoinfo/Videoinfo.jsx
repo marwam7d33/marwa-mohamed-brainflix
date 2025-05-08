@@ -41,7 +41,7 @@ function Videoinfo({ video }) {
           <div className="video-info__views--tabview">
             <p>
               <img
-                src="/src/assets/Icons/views.svg"
+                src="https://raw.githubusercontent.com/marwam7d33/marwa-mohamed-brainflix/2a798dd28d34f7670fe0d24905f879e2b7335651/src/assets/Icons/views.svg"
                 alt=""
                 className="video-info__views--icon"
               />
@@ -55,7 +55,7 @@ function Videoinfo({ video }) {
           </p>
           <p className="video-info__like">
             <img
-              src="/src/assets/Icons/likes.svg"
+              src="https://raw.githubusercontent.com/marwam7d33/marwa-mohamed-brainflix/2a798dd28d34f7670fe0d24905f879e2b7335651/src/assets/Icons/likes.svg"
               alt=""
               className="video-info__like--icon"
             />
